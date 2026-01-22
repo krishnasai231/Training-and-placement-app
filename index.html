@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T&P Cell - College Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Training & Placement Cell</h1>
+      <nav class="nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#students" class="nav-link">Students</a>
+        <a href="#recruiters" class="nav-link">Recruiters</a>
+        <a href="#tnp-cell" class="nav-link">T&P Cell</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2 class="hero-title">Bridging Students and Recruiters</h2>
+      <p class="hero-subtitle">Empowering careers through seamless placement management</p>
+      <button class="cta-btn" onclick="scrollToSection('students')">Explore Students</button>
+    </div>
+  </section>
+
+  <!-- Students Module -->
+  <section id="students" class="module">
+    <div class="container">
+      <h2 class="module-title green-text">Students</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Student Profile</h3>
+          <p>Manage your academic and personal details.</p>
+          <button class="green-btn" onclick="showModal('student-profile-modal')">View Profile</button>
+        </div>
+        <div class="card">
+          <h3>Placement Notes</h3>
+          <p>Access important notices and placement materials.</p>
+          <button class="green-btn" onclick="showModal('notes-modal')">View Notes</button>
+        </div>
+        <div class="card">
+          <h3>Applied Jobs</h3>
+          <p>Track your job applications and status.</p>
+          <button class="green-btn" onclick="showModal('applied-jobs-modal')">View Jobs</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recruiters Module -->
+  <section id="recruiters" class="module">
+    <div class="container">
+      <h2 class="module-title green-text">Recruiters</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Post a Job</h3>
+          <p>Create new job openings for students.</p>
+          <button class="green-btn" onclick="showModal('post-job-modal')">Post Job</button>
+        </div>
+        <div class="card">
+          <h3>View Applications</h3>
+          <p>Browse and manage student applications.</p>
+          <button class="green-btn" onclick="showModal('applications-modal')">View Applications</button>
+        </div>
+        <div class="card">
+          <h3>Company Profile</h3>
+          <p>Update your company information.</p>
+          <button class="green-btn" onclick="showModal('company-profile-modal')">View Profile</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T&P Cell Module -->
+  <section id="tnp-cell" class="module">
+    <div class="container">
+      <h2 class="module-title green-text">T&P Cell</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Dashboard</h3>
+          <p>Overview of all placement activities.</p>
+          <button class="green-btn" onclick="showModal('dashboard-modal')">Open Dashboard</button>
+        </div>
+        <div class="card">
+          <h3>Manage Students</h3>
+          <p>Approve student registrations and data.</p>
+          <button class="green-btn" onclick="showModal('manage-students-modal')">Manage</button>
+        </div>
+        <div class="card">
+          <h3>Announcements</h3>
+          <p>Publish notices and updates.</p>
+          <button class="green-btn" onclick="showModal('announcements-modal')">Announce</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="green-text">Contact T&P Cell</h2>
+      <p>Email: tnp@college.edu | Phone: +91-123-456-7890</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Training & Placement Cell. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+
+  <!-- Student Profile Modal -->
+  <div id="student-profile-modal" class="modal">
+    <h3>Student Profile</h3>
+    <form id="student-profile-form">
+      <label>Name: <input type="text" name="name" required /></label>
+      <label>Roll No: <input type="text" name="roll" required /></label>
+      <label>Branch: <input type="text" name="branch" required /></label>
+      <label>CGPA: <input type="number" step="0.01" name="cgpa" required /></label>
+      <button type="submit" class="green-btn">Save</button>
+    </form>
+  </div>
+
+  <!-- Notes Modal -->
+  <div id="notes-modal" class="modal">
+    <h3>Placement Notes</h3>
+    <ul id="notes-list">
+      <li>Resume Writing Tips</li>
+      <li>Aptitude Test Syllabus</li>
+      <li>Interview Guidelines</li>
+    </ul>
+  </div>
+
+  <!-- Applied Jobs Modal -->
+  <div id="applied-jobs-modal" class="modal">
+    <h3>Applied Jobs</h3>
+    <table id="applied-jobs-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Acme Corp</td>
+          <td>Software Engineer</td>
+          <td>Interview Scheduled</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Post Job Modal -->
+  <div id="post-job-modal" class="modal">
+    <h3>Post a Job</h3>
+    <form id="post-job-form">
+      <label>Job Title: <input type="text" name="title" required /></label>
+      <label>Description: <textarea name="description" required></textarea></label>
+      <label>Location: <input type="text" name="location" required /></label>
+      <button type="submit" class="green-btn">Post</button>
+    </form>
+  </div>
+
+  <!-- Applications Modal -->
+  <div id="applications-modal" class="modal">
+    <h3>Student Applications</h3>
+    <table id="applications-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Branch</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rahul Sharma</td>
+          <td>202101</td>
+          <td>CSE</td>
+          <td><button class="green-btn">Shortlist</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Company Profile Modal -->
+  <div id="company-profile-modal" class="modal">
+    <h3>Company Profile</h3>
+    <form id="company-profile-form">
+      <label>Company Name: <input type="text" name="name" required /></label>
+      <label>Industry: <input type="text" name="industry" required /></label>
+      <label>Website: <input type="url" name="website" /></label>
+      <button type="submit" class="green-btn">Update</button>
+    </form>
+  </div>
+
+  <!-- Dashboard Modal -->
+  <div id="dashboard-modal" class="modal">
+    <h3>T&P Dashboard</h3>
+    <div class="stats">
+      <div class="stat">
+        <strong>Total Students:</strong> <span id="total-students">1200</span>
+      </div>
+      <div class="stat">
+        <strong>Jobs Posted:</strong> <span id="total-jobs">45</span>
+      </div>
+      <div class="stat">
+        <strong>Placed Students:</strong> <span id="placed-students">890</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manage Students Modal -->
+  <div id="manage-students-modal" class="modal">
+    <h3>Manage Students</h3>
+    <table id="manage-students-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anita Verma</td>
+          <td>202102</td>
+          <td>Pending</td>
+          <td><button class="green-btn">Approve</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Announcements Modal -->
+  <div id="announcements-modal" class="modal">
+    <h3>Announcements</h3>
+    <form id="announcements-form">
+      <label>Title: <input type="text" name="title" required /></label>
+      <label>Message: <textarea name="message" required></textarea></label>
+      <button type="submit" class="green-btn">Publish</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
